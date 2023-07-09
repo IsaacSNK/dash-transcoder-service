@@ -20,8 +20,9 @@ async function main(srcBucket, file, destBucket, destKey) {
       file,
       outputFolder
     );
-    await transcodeFile(downloadedFilePath, outputFolder);
-    await uploadTranscodedVideo(outputFolder, destBucket, destKey);
+    const outputFolderForTranscode = path.join(outputFolder, "output");
+    await transcodeFile(downloadedFilePath, outputFolderForTranscode);
+    await uploadTranscodedVideo(outputFolderForTranscode, destBucket, destKey);
   } catch (err) {
     console.error(err);
   }
@@ -82,6 +83,6 @@ async function uploadSingleFile(srcFolder, fileName, bucket, key) {
 main(
   "upc-video-transcode-input",
   "world.mp4",
-  "upc-video-transcode-output",
+  "video-streaming-test-isaac",
   "world"
 );

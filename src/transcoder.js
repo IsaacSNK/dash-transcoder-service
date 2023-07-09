@@ -18,10 +18,9 @@ if (os.platform() == "win32") {
   ffmpeg.setFfprobePath(path.join(binarypath, "ffprobe.exe"));
 }
 
-async function transcodeFile(inputVideoPath, outputFolder) {
-  const targetdir = path.join(outputFolder, "output");
+async function transcodeFile(inputVideoPath, targetdir) {
   createTargetDir(targetdir);
-  runFFMpeg(targetdir, inputVideoPath);
+  return runFFMpeg(targetdir, inputVideoPath);
 }
 
 function createTargetDir(targetdir) {
@@ -65,7 +64,7 @@ function runFFMpeg(targetdir, inputVideoPath) {
   });
 }
 
-function setArguments(process, targetfn) {
+function setArguments(proc, targetfn) {
   const sizes = [
     [240, 350],
     [480, 700],
