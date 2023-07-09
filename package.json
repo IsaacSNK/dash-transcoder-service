@@ -1,0 +1,17 @@
+{
+  "name": "dash-transcoder-service",
+  "version": "1.0.0",
+  "description": "Transcoder service",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.367.0",
+    "fluent-ffmpeg": "^2.1.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  }
+}
