@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/main.js"
   },
-  "license": "ISC",
+  "license": "MIT",
+  "author": "Isaac Ramirez H.",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.367.0",
     "fluent-ffmpeg": "^2.1.2"
