@@ -14,15 +14,13 @@ const temp_folder = "video-transcode";
 
 async function main(srcBucket, file, destBucket, destKey) {
   try {
-    const outputFolder =
-      "/var/folders/7_/tjg1zhvj4d5b_y71wd06x5wc0000gn/T/video-transcode6wBQKD/output/";
-    // const outputFolder = await createTempFolder();
-    // const downloadedFilePath = await downloadFile(
-    //   srcBucket,
-    //   file,
-    //   outputFolder
-    // );
-    // await transcodeFile(downloadedFilePath, outputFolder);
+    const outputFolder = await createTempFolder();
+    const downloadedFilePath = await downloadFile(
+      srcBucket,
+      file,
+      outputFolder
+    );
+    await transcodeFile(downloadedFilePath, outputFolder);
     await uploadTranscodedVideo(outputFolder, destBucket, destKey);
   } catch (err) {
     console.error(err);
