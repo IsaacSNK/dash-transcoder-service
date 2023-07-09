@@ -79,3 +79,5 @@ async function uploadSingleFile(srcFolder, fileName, bucket, key) {
   await client.send(command);
   fileStream.close();
 }
+
+module.exports = { generateDashVideo: main };
