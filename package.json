@@ -1,6 +1,6 @@
 {
   "name": "dash-transcoder-service",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Transcoder service",
   "main": "src/main.js",
   "scripts": {
