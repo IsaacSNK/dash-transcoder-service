@@ -79,10 +79,3 @@ async function uploadSingleFile(srcFolder, fileName, bucket, key) {
   await client.send(command);
   fileStream.close();
 }
-
-main(
-  "upc-video-transcode-input",
-  "world.mp4",
-  "video-streaming-test-isaac",
-  "world"
-);
